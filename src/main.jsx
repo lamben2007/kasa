@@ -1,10 +1,26 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from "react-router";
 import './index.css'
-import App from './App.jsx'
+import Footer from './components/Footer/Footer.jsx';
+import Header from './components/Header/Header.jsx';
+import Home from './pages/Home/Home.jsx';
+import Apropos from './pages/Apropos/index.jsx';
+import Error from './components/Error'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/apropos" element={<Apropos />} />
+        <Route path="*" element={<Error/>} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   </StrictMode>,
 )

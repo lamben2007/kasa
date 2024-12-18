@@ -1,0 +1,37 @@
+.divBanner {
+  position: relative; /* Nécessaire pour positionner l'overlay */
+  width: 100%; /* Prend toute la largeur */
+  height: 223px; /* Hauteur de la bannière */
+  background-image: url("../../assets/banner.png"); /* Image de fond */
+  background-size: cover; /* L'image couvre tout le div */
+  background-position: center; /* Centrage de l'image */
+  display: flex; /* Pour centrer le contenu */
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal */
+  border-radius: 25px;
+}
+
+.divBanner_overlay {
+  position: absolute; /* Positionnement par rapport à la bannière */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fond noir avec opacité de 60% */
+  z-index: 1; /* Placé derrière le contenu mais devant l'image */
+  border-radius: 25px;
+}
+
+.divBanner_content {
+  position: relative; /* Le contenu reste au-dessus de l'overlay */
+  z-index: 2; /* Au-dessus de l'overlay */
+  color: white; /* Texte blanc pour le contraste */
+  text-align: center; /* Texte centré */
+  font-size: 48px;
+  color: white;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 black, /* Bordure en bas à droite */ -1px 1px 0 black,
+    /* Bordure en bas à gauche */ 1px -1px 0 black,
+    /* Bordure en haut à droite */ -1px -1px 0 black,
+    /* Bordure en haut à gauche */ 4px 4px 6px rgba(0, 0, 0, 0.5); /* Ombre portée */
+}
