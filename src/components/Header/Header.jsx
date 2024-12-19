@@ -11,7 +11,7 @@ function Header() {
         <img className="navbar__logo" src={picLogo} alt="Logo Kasa" />
         <div>
           <Link className="navbar__link navbar__link--underline" to="/">Accueil</Link>
-          <Link className="navbar__link" to="/apropos">A Propos</Link>
+          <Link className="navbar__link" to="/about">A Propos</Link>
         </div>
       </nav>
 

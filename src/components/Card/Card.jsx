@@ -1,28 +1,29 @@
 import PropTypes from 'prop-types';
 import './Card.scss';
+import {  NavLink } from 'react-router'
 
-const Card = ({ id, imageUrl, title }) => {
-
-    //
-    function test(event, id) {
-        event.preventDefault(); // Empêche la navigation par défaut du lien
-        alert("clic ID: " + id);
-    }
+//
+const Card = ({ id, cover, title }) => {
 
     //
     return (
-        <a className="card">
-            <img className="card__image" onClick={(event) => test(event, id)} src={imageUrl} alt={title} />
-            <span className="card__title">{title}-{id}</span>
-        </a>
+        <article>
+            <NavLink key={id} to={`/accommodation/${id}`} className="card">
+                <img className="card__image" src={cover} alt={title} />
+                <span className="card__title">{title}</span>
+            </NavLink>
+        </article>
     );
-};
+
+}
 
 //
 Card.propTypes = {
     id: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string.isRequired, // URL de l'image
+    cover: PropTypes.string.isRequired, // URL de l'image
     title: PropTypes.string.isRequired,   // Titre de la carte
 };
 
 export default Card;
+
+

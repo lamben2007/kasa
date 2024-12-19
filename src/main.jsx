@@ -5,8 +5,9 @@ import './index.css'
 import Footer from './components/Footer/Footer.jsx';
 import Header from './components/Header/Header.jsx';
 import Home from './pages/Home/Home.jsx';
-import Apropos from './pages/Apropos/index.jsx';
+import About from './pages/About/About.jsx';
 import Error from './components/Error'
+import Accommodation from './pages/Accomodation/Accomodation.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -16,8 +17,9 @@ createRoot(document.getElementById('root')).render(
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/apropos" element={<Apropos />} />
-        <Route path="*" element={<Error/>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/accommodation/:id" element={<Accommodation />} />
+        <Route path="*" element={<Error />} />
       </Routes>
 
       <Footer />
