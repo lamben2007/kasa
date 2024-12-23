@@ -2,10 +2,7 @@
   position: relative; /* Nécessaire pour positionner l'overlay */
   width: 100%; /* Prend toute la largeur */
   height: 223px; /* Hauteur de la bannière */
-  background-image: url("../../assets/banner.png"); /* Image de fond */
-  background-size: cover; /* L'image couvre tout le div */
-  background-position: center; /* Centrage de l'image */
-  display: flex; /* Pour centrer le contenu */
+  display: flex;
   align-items: center; /* Centrage vertical */
   justify-content: center; /* Centrage horizontal */
   border-radius: 25px;
@@ -30,8 +27,17 @@
   font-size: 48px;
   color: white;
   font-weight: 700;
-  text-shadow: 1px 1px 0 black, /* Bordure en bas à droite */ -1px 1px 0 black,
-    /* Bordure en bas à gauche */ 1px -1px 0 black,
-    /* Bordure en haut à droite */ -1px -1px 0 black,
-    /* Bordure en haut à gauche */ 4px 4px 6px rgba(0, 0, 0, 0.5); /* Ombre portée */
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black,
+    -1px -1px 0 black, 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.divBanner_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pour un ajustement propre */
+  z-index: -1; /* Place l'image derrière le contenu */
+  border-radius: 25px;
 }

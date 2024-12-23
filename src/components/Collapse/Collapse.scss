@@ -1,0 +1,56 @@
+.divCollapse {
+  width: 1023px;
+  // border: 2px solid;
+
+  .divCollapse_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff6060;
+    padding: 10px 20px 10px 15px;
+    border-radius: 5px;
+
+    .divCollapse_bar_title {
+      color: white;
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .divCollaps_bar_button {
+      border: none;
+      background: none;
+      padding: 0;
+
+      img {
+        width: 24px;
+        height: 14px;
+        transition: transform 0.3s ease-out;
+      }
+
+
+
+      .rotated {
+        transform: rotate(-180deg); /* Applique la rotation */
+      }
+
+
+    }
+
+    .divCollaps_bar_button:focus {
+      outline: none;
+    }
+  }
+
+  .divCollapse_text {
+    color: black;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 15px;
+    text-align: left;
+  }
+
+  .divCollapse_text--invisible {
+    display: none;
+  }
+}
