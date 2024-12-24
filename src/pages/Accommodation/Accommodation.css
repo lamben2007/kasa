@@ -1,0 +1,31 @@
+.divAccommodation {
+    /* background-color: orange; */
+    /* border: 1px solid black; */
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .divTitleHost {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .divRateTags {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .divDetails {
+        width: 100%;
+        /* background-color: purple; */
+        /* border: 3px solid black; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 100px;
+    }
+}

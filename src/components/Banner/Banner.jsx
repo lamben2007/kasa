@@ -18,7 +18,7 @@ function Banner({ type }) {
 
 
       <img
-        src={type === "home" ? "public/bannerHome.png" : "public/bannerAbout.webp"}
+        src={type === "home" ? "/bannerHome.png" : "/bannerAbout.webp"}
         alt={type === "home" ? "Accueil" : "A propos"}
         className="divBanner_image"
       />

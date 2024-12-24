@@ -1,0 +1,32 @@
+.divHost {
+  // background-color: pink;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+  .divHost_name {
+    color: #ff6060;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: right;
+    width: 100px;
+  }
+
+  .divHost_picture {
+    width: 64px; /* Largeur de l'image */
+    height: 64px; /* Hauteur de l'image */
+    border-radius: 50%; /* Rend l'image circulaire */
+    overflow: hidden; /* Cache les parties qui dépassent */
+    display: flex; /* Centre l'image si nécessaire */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+  }
+
+  .divHost_picture img {
+    width: 100%; /* S'assure que l'image couvre bien le cercle */
+    height: 100%; /* Garde les proportions */
+    object-fit: cover; /* S'assure que l'image remplit le cercle */
+  }
+  
+}
