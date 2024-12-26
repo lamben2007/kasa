@@ -28,9 +28,20 @@ function Collapse({ title, collapseText }) {
                 </button>
             </div>
 
-            <div className={`divCollapse_text ${!isOpen ? 'divCollapse_text--invisible' : ''}`}>
-                {collapseText}
-            </div>
+            {
+                !Array.isArray(collapseText) ? (
+                    <div className={`divCollapse_text ${!isOpen ? 'divCollapse_text--invisible' : ''}`}>
+                        {collapseText}
+                    </div>
+                ) :
+                    (
+                        <div className={`divCollapse_text ${!isOpen ? 'divCollapse_text--invisible' : ''}`}>
+                            <ul>
+                                {collapseText.map(item => <li key={item}>{item}</li>)}
+                            </ul>
+                        </div>
+                    )
+            }
 
         </div>
 
@@ -41,7 +52,7 @@ function Collapse({ title, collapseText }) {
 //
 Collapse.propTypes = {
     title: PropTypes.string.isRequired,
-    collapseText: PropTypes.string.isRequired,
+    collapseText: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
 export default Collapse

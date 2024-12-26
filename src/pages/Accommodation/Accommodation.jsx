@@ -6,7 +6,7 @@ import Rate from "../../components/Rate/Rate"
 import Tags from "../../components/Tags/Tags"
 import Title from "../../components/Title/Title"
 import Collapse from '../../components/Collapse/Collapse';
-import './Accommodation.css';
+import './Accommodation.scss';
 
 //
 function Accommodation() {
@@ -83,8 +83,8 @@ function Accommodation() {
             </div>
 
             <div className="divDetails">
-              <Collapse title="Description" collapseText="description du logement" />
-              <Collapse title="Equipements" collapseText="Liste des équipements" />
+              <Collapse title="Description" collapseText={accommodationInfos.description} />
+              <Collapse title="Equipements" collapseText={accommodationInfos.equipments} />
             </div>
 
           </div >

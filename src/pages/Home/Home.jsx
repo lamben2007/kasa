@@ -39,7 +39,7 @@ function Home() {
   return (
     <div className="divHome">
 
-      <Banner type={"home"}/>
+      <Banner page={"home"}/>
 
       {/* GALLERY */}
       <div className="divHome__gallery">

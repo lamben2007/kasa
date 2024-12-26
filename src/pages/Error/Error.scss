@@ -1,0 +1,25 @@
+.divError {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-bottom: 90px;
+
+  .divError_404 {
+    color: #ff6060;
+    font-size: 288px;
+    font-weight: 700;
+  }
+
+  .divError_Message {
+    color: #ff6060;
+    font-weight: 500;
+    font-size: 36px;
+  }
+
+  .divError_lien {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    text-decoration: underline;
+  }
+}

@@ -45,9 +45,22 @@
     font-size: 18px;
     padding: 15px;
     text-align: left;
+
+    ul {
+      padding: 0; /* Supprime les marges internes */
+      margin: 0;
+    }
+
+    li {
+      list-style-type: none; /* Supprime les puces */
+      padding: 0; /* Supprime les marges internes */
+      margin: 0;
+    }
+
   }
 
   .divCollapse_text--invisible {
     display: none;
   }
+  
 }

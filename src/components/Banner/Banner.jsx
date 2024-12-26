@@ -1,7 +1,7 @@
 import './Banner.scss'
 import PropTypes from 'prop-types';
 
-function Banner({ type }) {
+function Banner({ page }) {
 
 
   //
@@ -12,14 +12,14 @@ function Banner({ type }) {
       <div className="divBanner_overlay"></div>
       <div className="divBanner_content">
 
-        {(type === "home" ? (<span>Chez vous, partout et ailleurs</span>) : (<></>))}
+        {(page === "home" ? (<span>Chez vous, partout et ailleurs</span>) : (<></>))}
 
       </div>
 
 
       <img
-        src={type === "home" ? "/bannerHome.png" : "/bannerAbout.webp"}
-        alt={type === "home" ? "Accueil" : "A propos"}
+        src={page === "home" ? "/bannerHome.png" : "/bannerAbout.webp"}
+        alt={page === "home" ? "Accueil" : "A propos"}
         className="divBanner_image"
       />
 
@@ -31,7 +31,7 @@ function Banner({ type }) {
 
 
 Banner.propTypes = {
-  type: PropTypes.string.isRequired
+  page: PropTypes.string.isRequired
 }
 
 export default Banner
