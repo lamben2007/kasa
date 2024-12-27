@@ -1,5 +1,7 @@
 import './Banner.scss'
 import PropTypes from 'prop-types';
+import bannerHomeImg from '../../assets/bannerHome.png'
+import bannerAboutImg from '../../assets/bannerAbout.webp'
 
 function Banner({ page }) {
 
@@ -18,7 +20,7 @@ function Banner({ page }) {
 
 
       <img
-        src={page === "home" ? "/bannerHome.png" : "/bannerAbout.webp"}
+        src={page === "home" ? bannerHomeImg : bannerAboutImg}
         alt={page === "home" ? "Accueil" : "A propos"}
         className="divBanner_image"
       />

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import './Card.scss';
-import {  NavLink } from 'react-router'
+import {  NavLink } from 'react-router-dom'
 
 //
 const Card = ({ id, cover, title }) => {

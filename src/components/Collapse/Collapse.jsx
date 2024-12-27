@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Collapse.scss'
 import PropTypes from 'prop-types';
-import topArrowImg from '/topArrow.png';
+import topArrowImg from '../../assets/topArrow.png';
 
 function Collapse({ title, collapseText }) {
 

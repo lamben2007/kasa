@@ -1,22 +1,68 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import picArrowBack from '../../assets/arrow-back.png';
+import picArrowForward from '../../assets/arrow-forward.png';
 import './Carousel.scss'
 
 //
-function Carousel() {
+function Carousel({ pictures }) {
+
+    const [pictureIndex, setPictureIndex] = useState(0);
+    const [btnBackVisible, setBtnBackVisible] = useState(false);
+    const [btnForwardVisible, setBtnForwardVisible] = useState(true);
+
+
+    //
+    function buttonsState(pictureIndex) {
+
+        //
+        if (pictureIndex === 0) setBtnBackVisible(false); else setBtnBackVisible(true);
+        //
+        if (pictureIndex === pictures.length - 1) setBtnForwardVisible(false); else setBtnForwardVisible(true);
+
+    }
+
+    //
+    function handleArrowBack() {
+        if (pictureIndex > 0) setPictureIndex(pictureIndex - 1)
+        buttonsState(pictureIndex - 1);
+    }
+
+    //
+    function handleArrowForward() {
+        if (pictureIndex < pictures.length - 1) setPictureIndex(pictureIndex + 1)
+        buttonsState(pictureIndex + 1);
+    }
+
 
     //
     return (
-        <>
-            <div className='divCarousel' >
-                <h1>CARROUSEL</h1>
-            </div>
-        </>
+        <div className='divCarousel' >
+
+            <img src={pictures[pictureIndex]} alt='Carousel picture' />
+
+            <button
+                className={`divCarousel_BtnBack ${btnBackVisible ? '' : 'divCarousel_Btn--invisible'}`}
+                onClick={handleArrowBack}>
+                <img src={picArrowBack} alt='arrow-back' />
+            </button>
+
+            <button
+                className={`divCarousel_BtnForward ${btnForwardVisible ? '' : 'divCarousel_Btn--invisible'}`}
+                onClick={handleArrowForward}>
+                <img src={picArrowForward} alt='arrow-forward' />
+            </button>
+
+            <div className='divCarousel_image-pagination'>{(pictureIndex + 1) + "/" + pictures.length}</div>
+
+        </div>
     )
+
 }
 
-// //
-// Carousel.propTypes = {
-//   type: PropTypes.string.isRequired
-// }
+//
+Carousel.propTypes = {
+    pictures: PropTypes.array.isRequired
+}
 
 export default Carousel

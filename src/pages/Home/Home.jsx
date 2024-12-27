@@ -15,7 +15,7 @@ function Home() {
   useEffect(() => {
     const fetchLogements = async () => {
       try {
-        const response = await fetch('../../../data/logements.json');
+        const response = await fetch('../../../data/accommodations.json');
         if (!response.ok) {
           throw new Error(`Erreur HTTP ! statut : ${response.status}`);
         }

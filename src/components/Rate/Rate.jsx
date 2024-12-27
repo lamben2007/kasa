@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import starImg from '/star.png'
-import grayStarImg from '/grayStar.png'
+import starImg from '../../assets/star.png'
+import grayStarImg from '../../assets/grayStar.png'
 import './Rate.scss'
 
 //

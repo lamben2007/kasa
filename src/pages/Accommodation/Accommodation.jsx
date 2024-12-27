@@ -6,7 +6,9 @@ import Rate from "../../components/Rate/Rate"
 import Tags from "../../components/Tags/Tags"
 import Title from "../../components/Title/Title"
 import Collapse from '../../components/Collapse/Collapse';
+import Error from '../Error/Error.jsx';
 import './Accommodation.scss';
+
 
 //
 function Accommodation() {
@@ -21,7 +23,7 @@ function Accommodation() {
   const fetchInfosAccommodation = async () => {
     try {
       //
-      const response = await fetch('../../../data/logements.json');
+      const response = await fetch('../../../data/accommodations.json');
       if (!response.ok) { throw new Error(`Erreur HTTP ! statut : ${response.status}`); }
 
       //
@@ -46,6 +48,7 @@ function Accommodation() {
   useEffect(() => {
     //
     fetchInfosAccommodation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //
@@ -59,7 +62,6 @@ function Accommodation() {
   };
 
 
-  // console.log(accommodationInfos)
   //
   return (
     <>
@@ -68,9 +70,7 @@ function Accommodation() {
         !isEmptyObject(accommodationInfos) ? (
           < div className="divAccommodation" >
 
-            {id}
-
-            <Carousel />
+            <Carousel pictures={accommodationInfos.pictures}/>
 
             <div className="divTitleHost">
               <Title accommodationData={accommodationInfos} />
@@ -89,7 +89,9 @@ function Accommodation() {
 
           </div >
 
-        ) : (<div>NO DATA</div>)
+        ) : (
+          <Error/>
+        )
 
       }
     </>
