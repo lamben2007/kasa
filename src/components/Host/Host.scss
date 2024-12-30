@@ -28,5 +28,11 @@
     height: 100%; /* Garde les proportions */
     object-fit: cover; /* S'assure que l'image remplit le cercle */
   }
-  
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .divHost {
+    order: 1;
+  }
 }

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import picArrowBack from '../../assets/arrow-back.png';
 import picArrowForward from '../../assets/arrow-forward.png';
 import './Carousel.scss'
@@ -16,9 +16,9 @@ function Carousel({ pictures }) {
     function buttonsState(pictureIndex) {
 
         //
-        if (pictureIndex === 0) setBtnBackVisible(false); else setBtnBackVisible(true);
+        if (pictureIndex === 0 || pictures.length === 1) setBtnBackVisible(false); else setBtnBackVisible(true);
         //
-        if (pictureIndex === pictures.length - 1) setBtnForwardVisible(false); else setBtnForwardVisible(true);
+        if (pictureIndex === pictures.length - 1 || pictures.length === 1) setBtnForwardVisible(false); else setBtnForwardVisible(true);
 
     }
 
@@ -33,6 +33,13 @@ function Carousel({ pictures }) {
         if (pictureIndex < pictures.length - 1) setPictureIndex(pictureIndex + 1)
         buttonsState(pictureIndex + 1);
     }
+
+    //
+    useEffect(() => {
+        buttonsState(0);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
 
 
     //
@@ -53,7 +60,9 @@ function Carousel({ pictures }) {
                 <img src={picArrowForward} alt='arrow-forward' />
             </button>
 
-            <div className='divCarousel_image-pagination'>{(pictureIndex + 1) + "/" + pictures.length}</div>
+            <div className={`divCarousel_image-pagination ${pictures.length < 2 ? 'divCarousel_Btn--invisible' : ''}`}>
+                {(pictureIndex + 1) + "/" + pictures.length}
+            </div>
 
         </div>
     )

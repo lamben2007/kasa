@@ -45,3 +45,16 @@
     bottom: 20px;
   }
 }
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .divCarousel {
+    .divCarousel_image-pagination {
+      display: none;
+    }
+
+    button {
+      display: none;
+    }
+  }
+}

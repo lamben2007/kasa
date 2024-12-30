@@ -41,3 +41,15 @@
   z-index: -1; /* Place l'image derrière le contenu */
   border-radius: 25px;
 }
+
+/* Responsive styles for small devices */
+@media (max-width: 767.98px) {
+  .divBanner {
+    height: 111px;
+  }
+
+  .divBanner_content {
+    font-size: 24px;
+    width: 225px;
+  }
+}

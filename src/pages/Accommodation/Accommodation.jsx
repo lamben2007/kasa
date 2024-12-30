@@ -68,18 +68,23 @@ function Accommodation() {
       {
 
         !isEmptyObject(accommodationInfos) ? (
-          < div className="divAccommodation" >
 
-            <Carousel pictures={accommodationInfos.pictures}/>
+          <div className="divAccommodation">
 
-            <div className="divTitleHost">
-              <Title accommodationData={accommodationInfos} />
-              <Host accommodationData={accommodationInfos} />
-            </div>
+            <Carousel pictures={accommodationInfos.pictures} />
 
-            <div className="divRateTags">
-              <Tags accommodationData={accommodationInfos} />
-              <Rate accommodationData={accommodationInfos} />
+            <div className='divTitleTagsHostRate'>
+
+              <div className="divTitleTags">
+                <Title accommodationData={accommodationInfos} />
+                <Tags accommodationData={accommodationInfos} />
+              </div>
+
+              <div className="divHostRate">
+                <Host accommodationData={accommodationInfos} />
+                <Rate accommodationData={accommodationInfos} />
+              </div>
+
             </div>
 
             <div className="divDetails">
@@ -87,10 +92,10 @@ function Accommodation() {
               <Collapse title="Equipements" collapseText={accommodationInfos.equipments} />
             </div>
 
-          </div >
+          </div>
 
         ) : (
-          <Error/>
+          <Error />
         )
 
       }

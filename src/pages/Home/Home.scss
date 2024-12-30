@@ -12,6 +12,16 @@
     align-content: center;
     justify-content: center;
     gap: 50px;
-    padding: 70px 0 70px 0;
+    padding: 30px 0 30px 0;
+  }
+}
+
+/* Responsive styles for small devices */
+@media (max-width: 767.98px) {
+  .divHome {
+    .divHome__gallery {
+      flex-direction: column;
+      gap: 22px;
+    }
   }
 }

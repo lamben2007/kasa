@@ -32,9 +32,9 @@
   border-radius: 8px;
 
   .card__image {
-    width: 100%; 
+    width: 100%;
     height: 340px;
-    display: block; 
+    display: block;
     object-fit: cover;
     border-radius: 8px;
   }
@@ -48,5 +48,17 @@
     left: 10px;
     text-align: left;
     text-shadow: 1px 1px 16px black;
+  }
+}
+
+/* Responsive styles for small devices */
+@media (max-width: 767.98px) {
+  .card {
+    width: 335px;
+    height: 255px;
+
+    .card__image {
+      height: 255px;
+    }
   }
 }

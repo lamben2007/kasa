@@ -1,15 +1,19 @@
 import { useState } from 'react';
-import './Collapse.scss'
 import PropTypes from 'prop-types';
 import topArrowImg from '../../assets/topArrow.png';
+import './Collapse.scss'
 
 function Collapse({ title, collapseText }) {
 
     //
     const [isOpen, setIsOpen] = useState(false);
+    // État pour savoir si l'utilisateur a interagi avec le composant
+    const [hasInteracted, setHasInteracted] = useState(false);
 
     //
     const handleClick = () => {
+        // Indique que l'utilisateur a interagi
+        setHasInteracted(true);
         //
         setIsOpen(!isOpen);
     };
@@ -23,19 +27,21 @@ function Collapse({ title, collapseText }) {
             <div className="divCollapse_bar">
                 <div className="divCollapse_bar_title">{title}</div>
 
-                <button className="divCollaps_bar_button" onClick={handleClick}>
+                <button className="divCollapse_bar_button" onClick={handleClick}>
                     <img className={isOpen ? 'rotated' : ''} src={topArrowImg} alt="arrow" />
                 </button>
             </div>
 
             {
                 !Array.isArray(collapseText) ? (
-                    <div className={`divCollapse_text ${!isOpen ? 'divCollapse_text--invisible' : ''}`}>
+                    <div
+                        className={`divCollapse_text ${hasInteracted ? (isOpen ? 'div-animate--expand' : 'div-animate--contract') : 'divCollapse_text--invisible'}`}>
                         {collapseText}
                     </div>
                 ) :
                     (
-                        <div className={`divCollapse_text ${!isOpen ? 'divCollapse_text--invisible' : ''}`}>
+                        <div
+                            className={`divCollapse_text ${hasInteracted ? (isOpen ? 'div-animate--expand' : 'div-animate--contract') : 'divCollapse_text--invisible'}`}>
                             <ul>
                                 {collapseText.map(item => <li key={item}>{item}</li>)}
                             </ul>

@@ -5,18 +5,18 @@
   justify-content: space-between;
   margin-bottom: 60px;
 
+  .navbar__logo {
+    width: 210px;
+  }
+
   .navbar__link {
     margin-left: 30px;
     color: #242424;
     text-decoration: none;
     font-size: 24px;
-  }
 
-  .navbar__logo {
-    width: 210px;
-  }
-
-  .navbar__link--underline {
-    text-decoration-line: underline;
+    &--underline {
+      text-decoration-line: underline;
+    }
   }
 }
