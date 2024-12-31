@@ -13,7 +13,8 @@ function Header() {
 
     <nav className="navbar">
       <img className="navbar__logo" src={picLogo} alt="Logo Kasa" />
-      <div>
+
+      <div className='navbar__btn'>
 
         <NavLink
           to="/"
@@ -33,6 +34,7 @@ function Header() {
         </NavLink>
 
       </div>
+
     </nav>
 
   )

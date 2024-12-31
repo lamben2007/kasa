@@ -1,12 +1,11 @@
-$margin-bottom: 50px;
 $gap-large: 100px;
 $gap-small: 20px;
 
 .divAccommodation {
-  margin-bottom: $margin-bottom;
   display: flex;
   flex-direction: column;
   gap: $gap-small;
+  padding: 25px 45px;
 
   .divTitleTagsHostRate {
     display: flex;

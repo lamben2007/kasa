@@ -1,8 +1,5 @@
 .divTags {
-  // width: 100px;
-  // height: 100px;
-  //   background-color: #00ffd7;
-
+  display: flex;
   .divTags_tag {
     color: white;
     background-color: #ff6060;
@@ -11,5 +8,14 @@
     font-weight: 700;
     font-size: 14px;
     padding: 5px 20px;
+  }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .divTags {
+    .divTags_tag {
+      font-size: 10px;
+    }
   }
 }

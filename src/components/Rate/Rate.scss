@@ -1,10 +1,16 @@
 .divRate {
-  // width: 100px;
-//   height: 100px;
-//   background-color: yellow;
-
   .divRate_star {
     width: 24px;
     padding: 8px;
+  }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .divRate {
+    .divRate_star {
+      width: 18px;
+      padding: 3px;
+    }
   }
 }

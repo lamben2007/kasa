@@ -16,3 +16,15 @@
     font-size: 24px;
   }
 }
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .divFooter {
+    justify-content: center;
+    gap: 10px;
+    .divFooter__copyright {
+      font-size: 12px;
+      width: 130px;
+    }
+  }
+}

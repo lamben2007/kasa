@@ -44,7 +44,7 @@ function About() {
 
   //
   return (
-    <div>
+    <div  className='divAbout'>
     
       <Banner page={"about"}/>
 

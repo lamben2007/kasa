@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 50px;
+  padding: 25px 45px;
 
   .divHome__gallery {
     background-color: #f6f6f6;
@@ -19,9 +20,12 @@
 /* Responsive styles for small devices */
 @media (max-width: 767.98px) {
   .divHome {
+    row-gap: 0px;
+    padding: 0px 45px;
     .divHome__gallery {
       flex-direction: column;
       gap: 22px;
+      background-color: white;
     }
   }
 }

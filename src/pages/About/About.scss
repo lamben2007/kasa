@@ -1,7 +1,21 @@
-.about_collapses {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  padding: 30px;
+.divAbout {
+  padding: 25px 45px;
+  .about_collapses {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+  }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .divAbout {
+    padding: 0 25px 25px 25px;
+
+    .about_collapses {
+      padding: 20px 0 0 0;
+    }
+  }
 }

@@ -18,3 +18,19 @@
     line-height: 50px;
   }
 }
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .divTitle {
+    .divTitle_title {
+      font-size: 18px;
+      line-height: 25px;
+      margin-bottom: 10px;
+    }
+    .divTitle_location {
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 10px;
+    }
+  }
+}

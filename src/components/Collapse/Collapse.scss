@@ -96,104 +96,25 @@
   }
 }
 
-// .divCollapse {
-//   background-color: pink;
-//   // width: 1023px;
-//   width: 100%;
-//   // border: 2px solid;
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .divCollapse {
+    .divCollapse_bar {
+      .divCollapse_bar_title {
+        font-size: 13px;
+      }
 
-//   .divCollapse_bar {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     background: #ff6060;
-//     padding: 10px 20px 10px 15px;
-//     border-radius: 5px;
+      .divCollapse_bar_button {
+        img {
+          width: 16px;
+          height: 10px;
+        }
+      }
+    }
 
-//     .divCollapse_bar_title {
-//       color: white;
-//       font-weight: 700;
-//       font-size: 24px;
-//     }
 
-//     .divCollaps_bar_button {
-//       border: none;
-//       background: none;
-//       padding: 0;
-
-//       img {
-//         width: 24px;
-//         height: 14px;
-//         transition: transform 0.3s ease-out;
-//       }
-
-//       .rotated {
-//         transform: rotate(-180deg); /* Applique la rotation */
-//       }
-//     }
-
-//     .divCollaps_bar_button:focus {
-//       outline: none;
-//     }
-//   }
-
-//   .divCollapse_text {
-//     // display: none;
-//     color: black;
-//     font-weight: 400;
-//     font-size: 18px;
-//     padding: 15px;
-//     text-align: left;
-
-//     ul {
-//       padding: 0; /* Supprime les marges internes */
-//       margin: 0;
-//     }
-
-//     li {
-//       list-style-type: none; /* Supprime les puces */
-//       padding: 0; /* Supprime les marges internes */
-//       margin: 0;
-//     }
-
-//     .div-animate--expand {
-//       overflow: hidden; // Évite de montrer le contenu pendant la transition
-//       animation: expand-height 2s ease-in-out forwards; // Animation sur 1 seconde
-//     }
-
-//   }
-
-//   .divCollapse_text--invisible {
-//     display: none;
-//   }
-
-//   // Définition de l'animation
-//   @keyframes expand-height {
-//     from {
-//       height: 0%;
-//       display: block;
-//     }
-//     to {
-//       height: 100%;
-//     }
-//   }
-
-//   @keyframes contract-height {
-//     0% {
-//       height: 100%; // Pleine hauteur
-//     }
-//     99% {
-//       height: 0%; // Réduit à 0
-//     }
-//     100% {
-//       height: 0; // Finalisation à 0 hauteur
-//       display: none; // Masque l'élément complètement
-//     }
-//   }
-
-//   .div-animate--contract {
-//     overflow: hidden; // Évite de montrer le contenu pendant la transition
-//     animation: contract-height 2s ease-in-out forwards; // Animation sur 1 seconde
-//   }
-// }
+    .divCollapse_text{
+      font-size: 12px;
+    }
+  }
+}
