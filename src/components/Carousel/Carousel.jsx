@@ -8,35 +8,44 @@ import './Carousel.scss'
 function Carousel({ pictures }) {
 
     const [pictureIndex, setPictureIndex] = useState(0);
-    const [btnBackVisible, setBtnBackVisible] = useState(false);
+    const [btnBackVisible, setBtnBackVisible] = useState(true);
     const [btnForwardVisible, setBtnForwardVisible] = useState(true);
 
 
     //
-    function buttonsState(pictureIndex) {
+    function buttonsState() {
 
         //
-        if (pictureIndex === 0 || pictures.length === 1) setBtnBackVisible(false); else setBtnBackVisible(true);
-        //
-        if (pictureIndex === pictures.length - 1 || pictures.length === 1) setBtnForwardVisible(false); else setBtnForwardVisible(true);
+        if (pictures.length > 1) {
+            setBtnBackVisible(true);
+            setBtnForwardVisible(true);
+        } else {
+            setBtnBackVisible(false);
+            setBtnForwardVisible(false);
+        }
 
     }
 
     //
     function handleArrowBack() {
-        if (pictureIndex > 0) setPictureIndex(pictureIndex - 1)
-        buttonsState(pictureIndex - 1);
+        if (pictureIndex === 0)
+            setPictureIndex(pictures.length - 1)
+        else
+            setPictureIndex(pictureIndex - 1)
     }
 
     //
     function handleArrowForward() {
-        if (pictureIndex < pictures.length - 1) setPictureIndex(pictureIndex + 1)
-        buttonsState(pictureIndex + 1);
+        if (pictureIndex >= pictures.length - 1)
+            setPictureIndex(0)
+        else
+            setPictureIndex(pictureIndex + 1)
     }
+
 
     //
     useEffect(() => {
-        buttonsState(0);
+        buttonsState();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

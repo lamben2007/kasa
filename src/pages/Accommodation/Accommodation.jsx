@@ -19,27 +19,30 @@ function Accommodation() {
   const [accommodationInfos, setAccommodationInfos] = useState({});
   const [error, setError] = useState(null);
 
+
   // Fonction de récupération des données JSON pour les collapes
   const fetchInfosAccommodation = async () => {
     try {
-      //
+      // Appel à l'API pour récupération des données JSON
       const response = await fetch('../../../data/accommodations.json');
-      if (!response.ok) { throw new Error(`Erreur HTTP ! statut : ${response.status}`); }
-
-      //
-      const data = await response.json();
-
-      //
-      const accommodation = data.find((item) => item.id === id);
-      if (accommodation) {
-        setAccommodationInfos(accommodation); // Mise à jour de l'état avec les données JSON
+      if (!response.ok) {
+        throw new Error(`Erreur HTTP ! statut : ${response.status}`);
       }
 
-    }
-    // 
-    catch (err) {
-      console.error('Erreur lors du fetch des logements:', err);
-      setError(err.message); // Stockage de l'erreur pour affichage ou débogage
+      // Parsing des données JSON
+      const responseData = await response.json();
+
+      // Recherche de l'accommodation par ID
+      const accommodation = responseData.find((item) => item.id === id);
+      if (accommodation) {
+        setAccommodationInfos(accommodation); // Mise à jour de l'état avec les données JSON
+      } else {
+        setError(`Accommodation id ${id} not found!`);
+      }
+    } catch (err) {
+      // Stockage de l'erreur pour affichage ou débogage
+      setError(`Une erreur s'est produite : ${err.message}`);
+      console.error("Détails de l'erreur :", err);
     }
   };
 
@@ -51,9 +54,11 @@ function Accommodation() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //
+
+
+  // Afficher la page d'erreur 404 si une erreur a été trouvé
   if (error) {
-    return <div>Erreur lecture des données</div>; // Affichage d'un message d'erreur si nécessaire
+    return <Error />
   }
 
   //
@@ -95,7 +100,7 @@ function Accommodation() {
           </div>
 
         ) : (
-          <Error />
+          <span> en cours de chargement ...</span>
         )
 
       }

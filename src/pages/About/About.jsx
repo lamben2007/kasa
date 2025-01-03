@@ -44,9 +44,10 @@ function About() {
 
   //
   return (
-    <div  className='divAbout'>
-    
-      <Banner page={"about"}/>
+    <div className='divAbout'>
+
+      <Banner page={"about"} />
+
 
       {infosCollapses.length > 0 ? (
 

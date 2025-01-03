@@ -30,11 +30,14 @@
   .navbar {
     // margin-bottom: 20px;
     padding: 20px;
+
     .navbar__logo {
       width: 145px;
     }
 
     .navbar__btn {
+      gap: 10px;
+      font-size: 18px;
       .navbar__link {
         font-size: 12px;
         text-transform: uppercase;

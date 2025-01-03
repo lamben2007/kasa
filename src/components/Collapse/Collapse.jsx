@@ -7,13 +7,9 @@ function Collapse({ title, collapseText }) {
 
     //
     const [isOpen, setIsOpen] = useState(false);
-    // État pour savoir si l'utilisateur a interagi avec le composant
-    const [hasInteracted, setHasInteracted] = useState(false);
 
     //
     const handleClick = () => {
-        // Indique que l'utilisateur a interagi
-        setHasInteracted(true);
         //
         setIsOpen(!isOpen);
     };
@@ -32,16 +28,18 @@ function Collapse({ title, collapseText }) {
                 </button>
             </div>
 
+
             {
                 !Array.isArray(collapseText) ? (
                     <div
-                        className={`divCollapse_text ${hasInteracted ? (isOpen ? 'div-animate--expand' : 'div-animate--contract') : 'divCollapse_text--invisible'}`}>
+                        className={`divCollapse_text ${isOpen ? 'div-animate--expand' : ''}`}>
                         {collapseText}
                     </div>
                 ) :
                     (
+
                         <div
-                            className={`divCollapse_text ${hasInteracted ? (isOpen ? 'div-animate--expand' : 'div-animate--contract') : 'divCollapse_text--invisible'}`}>
+                            className={`divCollapse_text ${isOpen ? 'div-animate--expand' : ''}`}>
                             <ul>
                                 {collapseText.map(item => <li key={item}>{item}</li>)}
                             </ul>

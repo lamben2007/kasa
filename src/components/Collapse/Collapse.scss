@@ -1,5 +1,5 @@
 .divCollapse {
-  background-color: pink;
+  // background-color: pink;
   width: 100%;
 
   .divCollapse_bar {
@@ -42,8 +42,14 @@
     color: black;
     font-weight: 400;
     font-size: 18px;
-    padding: 15px;
     text-align: left;
+    background: #f6f6f6;
+
+    padding-left: 15px;
+    padding-top: 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s linear, padding 0.6s linear;
 
     ul {
       padding: 0;
@@ -56,42 +62,10 @@
       margin: 0;
     }
 
-    &--invisible {
-      display: none;
-    }
-
     &.div-animate--expand {
-      overflow: hidden;
-      animation: expand-height 400ms ease-in-out forwards;
-    }
-
-    &.div-animate--contract {
-      overflow: hidden;
-      animation: contract-height 400ms ease-in-out forwards;
-    }
-  }
-
-  @keyframes expand-height {
-    from {
-      height: 0%;
-      color: green;
-    }
-    to {
-      height: 100%;
-      color: blue;
-    }
-  }
-
-  @keyframes contract-height {
-    0% {
-      height: 100%; // Pleine hauteur
-    }
-    99% {
-      height: 0%; // Réduit à 0
-    }
-    100% {
-      height: 0; // Finalisation à 0 hauteur
-      display: none; // Masque l'élément complètement
+      max-height: 200px;
+      padding-left: 15px;
+      padding-top: 15px;
     }
   }
 }
@@ -112,8 +86,7 @@
       }
     }
 
-
-    .divCollapse_text{
+    .divCollapse_text {
       font-size: 12px;
     }
   }

@@ -57,8 +57,11 @@
       display: none;
     }
 
-    button {
-      display: none;
+    .divCarousel_Btn {
+      top: 45%;
+      img {
+        height: 20px;
+      }
     }
   }
 }
